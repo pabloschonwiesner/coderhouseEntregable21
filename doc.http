@@ -1,10 +1,10 @@
-@url = https://quick-victorious-baroness.glitch.me/
+@url = http://localhost:8080
 
 
 // perfil = 1 => Administrador, perfil = 2 => usuarios
 @perfil = 1
 
-GET {{url}}/productos HTTP/1.1
+GET {{url}}/productos?precioMinimo=10&precioMaximo=100&nombre=mayo HTTP/1.1
 perfil: {{perfil}}
 
 GET {{url}}/productos/1 HTTP/1.1
@@ -29,7 +29,7 @@ perfil: {{perfil}}
 
 {
   "nombre": "Mayonesa Hellmans 2",
-  "descripcion": "Mayonesa Hellmans Premium 2.75kg",
+  "descripcion": "Mayonesa Hellmans Premium 3.75kg",
   "codigo": "mayo1",
   "foto": "https://http2.mlstatic.com/D_NQ_NP_2X_706878-MLA45106019219_032021-F.webp",
   "precio": 25.8,

@@ -12,7 +12,7 @@ const helpers = new Helpers()
 
 router.get('/:id_producto?', async (req, res) => {
   try {
-    let productos = await productosService.getProductos( req.params.id_producto )
+    let productos = await productosService.getProductos( req.params.id_producto, req.query )
     return helpers.respuestaExitosa(res, productos )
   } catch ( err ) { return helpers.respuestaError(res, err) }
 })

@@ -3,12 +3,12 @@ const productosRepository = new ProductosRepository()
 
 class ProductosService {
   
-  async getProductos ( id_producto ) {
+  async getProductos ( id_producto, queryParams ) {
     try {
-      let productos = await productosRepository.getProductos( id_producto )
+      let productos = await productosRepository.getProductos( id_producto, queryParams )
       return productos
     } catch ( err ) { throw err }
-  }
+  }prod
 
   async addProducto ( producto ) {
     try {

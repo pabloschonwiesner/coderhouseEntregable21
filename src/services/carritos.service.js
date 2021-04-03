@@ -32,8 +32,11 @@ class CarritosService {
       } 
 
       let producto = await productosRepository.getProductos( id_producto )
-      let productoAgregado = await carritosRepository.addProductoCarrito( id_carrito, producto )
-      return productoAgregado
+      if(producto.length > 0) {
+        return await carritosRepository.addProductoCarrito( id_carrito, producto )
+      } else {
+        throw Error('No existe el producto')
+      }
     } catch ( err ) { throw err }
   }
 
